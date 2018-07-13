@@ -1,0 +1,5 @@
+<h2>New Todo</h2>
+<div class="fill-width">
+    <material-input type="text" [(ngModel)]="viewModel.description" label="So what do you need to do anyways?"></material-input>
+    <material-icon icon="add" [class.red]="!viewModel.canAddTodo" (click)="onAddClicked()"></material-icon>
+</div>

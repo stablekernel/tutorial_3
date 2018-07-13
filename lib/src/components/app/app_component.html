@@ -1,0 +1,18 @@
+<material-drawer temporary #drawer="drawer" [attr.overlay]="true">
+    <menu></menu>
+</material-drawer>
+<div class="material-content">
+    <header class="material-header shadow">
+        <div class="material-header-row">
+            <material-button icon
+                             class="material-drawer-button" (trigger)="drawer.toggle()">
+                <material-icon icon="menu"></material-icon>
+            </material-button>
+            <span class="material-header-title">Organizer</span>
+            <div class="material-spacer"></div>
+        </div>
+    </header>
+    <div class="content">
+        <router-outlet [routes]="routes.all" ></router-outlet>
+    </div>
+</div>

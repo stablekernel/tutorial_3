@@ -1,0 +1,15 @@
+@import 'package:angular_components/css/material/material';
+@import 'package:angular_components/material_icon/mixins';
+
+.add-button {
+  float: right;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  color: green;
+}
+
+.custom-size {
+  @include material-icon-size(65);
+}

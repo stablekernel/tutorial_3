@@ -1,0 +1,24 @@
+.fill-width {
+  align-items: baseline;
+  display: flex;
+  width: 100%;
+
+  material-input {
+    flex-grow: 1;
+    min-width: 240px;
+  }
+  material-icon {
+    cursor: pointer;
+  }
+  material-icon :hover {
+    color: green;
+  }
+}
+
+.red {
+  color:red;
+}
+//specificity demands we make this more specific than .fill-width material-icon :hover
+material-icon .red :hover {
+  color:red;
+}

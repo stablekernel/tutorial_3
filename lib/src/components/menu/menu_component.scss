@@ -1,0 +1,8 @@
+@import 'package:angular_components/app_layout/mixins';
+@import 'package:angular_components/css/material/material';
+
+:host {
+  margin: 0 0;
+  padding: 0 0;
+  @include mat-drawer-list-items;
+}

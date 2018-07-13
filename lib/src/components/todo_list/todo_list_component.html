@@ -1,0 +1,27 @@
+<h3>
+    <material-icon class="custom-size" icon="list-alt" baseline></material-icon>
+    Todo List
+    <material-icon class="add-button" icon="add" baseline (click)="viewModel.shouldShowNewTodoDialog = true"></material-icon>
+</h3>
+<p *ngIf="!viewModel.hasTodos">
+    Apparently, you don't have anything to do. <a [routerLink]="routes.newTodo.toUrl()">Are you sure?</a>
+</p>
+<material-list *ngIf="viewModel.hasTodos">
+    <div group>
+        <material-list-item *ngFor="let todo of viewModel.todos">
+            <material-icon icon="work" class="material-list-item-primary" aria-hidden="true"></material-icon>
+            {{todo.title}}
+        </material-list-item>
+    </div>
+</material-list>
+<modal [visible]="viewModel.shouldShowNewTodoDialog">
+    <material-dialog class="basic-dialog">
+        <new-todo (onAdded)="viewModel.shouldShowNewTodoDialog = false"></new-todo>
+
+        <div footer>
+            <material-button autoFocus clear-size (trigger)="viewModel.shouldShowNewTodoDialog = false">
+                Close
+            </material-button>
+        </div>
+    </material-dialog>
+</modal>
